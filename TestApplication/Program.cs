@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestApplication
 {
@@ -12,7 +8,12 @@ namespace TestApplication
         {
             var calculator = new EvapotranspirationCalculator.Calculator();
 
-            var result = calculator.Calculate("7a907ac8bfd9058c", DateTime.Parse("5 Sep 2017"), "IWESTERN594", 1);
+            var weatherUndergroundKey = "";         // Weather Underground api key
+            var date = DateTime.Today;              // Requested Date
+            var pws = "";                           // Personal weather station code
+            var canopyReflectionCoefficient = 1;    // Canopy Reflection Coefficient
+
+            var result = calculator.Calculate(weatherUndergroundKey, date, pws, canopyReflectionCoefficient);
 
             var EvapotranspirationMM = result.EvapotranspirationMM;
         }
